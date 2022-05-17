@@ -7,7 +7,8 @@ import {
   VStack,
   Code,
   Grid,
-  theme,
+  // theme,
+  extendTheme,
   Container,
   Heading,
   Divider,
@@ -15,6 +16,34 @@ import {
 import { Logo } from './Logo';
 import Header from './components/Header';
 import CardList from './components/CardList';
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: 'red',
+      200: 'red',
+      300: 'red',
+      400: 'red',
+      500: 'brown',
+      600: 'brown',
+      700: 'brown',
+      800: 'brown',
+    }
+  },
+  components: {
+    Button: {
+      variants: {
+        brand: props => ({
+          bg: props.colorMode === "dark" ? 'brand.300' : 'brand.700',
+          color: "white",
+          _hover: {
+            bg: props.colorMode === "dark" ? 'brand.700' : 'brand.300',
+          }
+        })
+      }
+    }
+  }
+});
 
 const posts = [{
   "userId": 1,

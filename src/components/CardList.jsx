@@ -14,7 +14,7 @@ const CardList = (props) => {
                         <Text>
                             {card.body}
                         </Text>
-                        <Button as='a' variant="outline">
+                        <Button as='a' variant="brand">
                             Read more
                         </Button>
                     </Stack>
